@@ -5,3 +5,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.blue_gradient{
+  background: rgb(62,180,137);
+  background: linear-gradient(159deg, rgba(62,180,137,1) 0%, rgba(144,238,144,1) 100%);}
