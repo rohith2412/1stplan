@@ -12,7 +12,7 @@ export function FirstLayer() {
         sure every one gets chance. Thank you*
       </p>
       <div className="pl-190 pt-10">
-      <button className="blue_gradient text-sm flex gap-2 cursor-pointer border-1 pl-5 text-white pr-5 pt-3 pb-3 rounded-4xl">
+      <button className="gradient-text blue_gradient text-sm flex gap-2 cursor-pointer border-1 pl-5 text-white pr-5 pt-3 pb-3 rounded-4xl">
         Get started for free
         <svg
           className="pt-0.5"
