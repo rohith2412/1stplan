@@ -1,13 +1,9 @@
-import { Background } from "./components/Background";
-import { FirstLayer } from "./components/FirstLayer";
-import { Navbar } from "./components/Navbar";
+import { HomePage } from "./Pages/HomePage";
 
 export default function Home() {
   return (
     <div>
-    <Background />
-    <Navbar />
-    <FirstLayer />
+      <HomePage />
     </div>
   );
 }
