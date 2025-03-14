@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "express": "^4.21.2",
+    "mongodb": "^6.14.2",
+    "mongoose": "^8.12.1",
     "next": "15.2.1",
-    "next-auth": "^5.0.0-beta.25",
+    "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
