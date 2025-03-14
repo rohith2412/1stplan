@@ -13,7 +13,7 @@ export function Navbar() {
           <div className="cursor-pointer pt-1.5">service</div>
           <div className="cursor-pointer pt-1.5">contact us</div>
           <div className="cursor-pointer pt-1.5">Log In</div>
-          <Link href="/select">
+          <Link href="/user">
             <button className="blue_gradient cursor-pointer pl-4.5 pt-1 pb-1 text-white pr-4.5 rounded-lg">
               Join
             </button>
