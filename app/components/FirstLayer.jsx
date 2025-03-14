@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function FirstLayer() {
   return (
     <div>
@@ -12,6 +14,7 @@ export function FirstLayer() {
         sure every one gets chance to build. Thank you*
       </p>
       <div className="flex justify-center pt-10">
+        <Link href="/select">
         <button className="gradient-text blue_gradient text-sm flex gap-2 cursor-pointer border-1 pl-5 text-white pr-5 pt-3 pb-3 rounded-4xl">
           Get started 
           <svg
@@ -25,6 +28,7 @@ export function FirstLayer() {
             <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
           </svg>
         </button>
+        </Link>
       </div>
     </div>
   );

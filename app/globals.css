@@ -103,3 +103,28 @@ body {
   font-style: normal;
 }
 
+.box{
+  outline: black ;
+  border: 3px;
+  border-radius: 4px;
+  
+}
+
+.testimonial-container {
+  max-width: 250px;
+  padding: 40px;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  font-style: "";
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.client-name {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+}
+
