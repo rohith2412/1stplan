@@ -1,6 +1,5 @@
 "use client";
-
-
+import {ClientForm} from "../components/ClientForm"
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Background } from "../components/Background";
 
@@ -14,21 +13,42 @@ export default function Register() {
       <section className="">
         {!session ? (
           <>
-            <h1></h1>
-            <button onClick={() => signIn("google")}>
-              Sign in with Google
-            </button>
+            <div className="grid justify-center p-60 gap-7 ">
+              <div className="flex justify-center text-xl">Welcome </div>
+              <div className="flex gap-3 border p-4 rounded-2xl">
+                <img
+                  className="h-6  "
+                  src="/google.webp"
+                  alt="Logo"
+                />
+                <button className="text-xl" onClick={() => signIn("google")}>
+                  Continue with Google
+                </button>
+              </div>
+            </div>
           </>
         ) : (
           <>
             <div className="flex justify-between ">
-              <div className="p-15 mt-6 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold mx-auto text-center z-10 tracking-tight pb-0">Dashboard</div>
+              <style jsx global>{`
+                @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+                .poppins {
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 400;
+                  font-style: normal;
+                }
+              `}</style>
+              <div className="pt-10 pl-10">
+                <img src="/ccc.png" alt="Logo" width="100" height="100" />
+              </div>
               <div className="flex  p-2">
-                <div className="p-7 border rounded-4xl ">
-                  <div className=""> {session.user.email}</div>
-                  <div className="flex pt-2">
-                    <div className=" text-sm ">{session.user.name}</div>
-                    <button className="pl-9 cursor-pointer" onClick={() => signOut()}>
+                <div className="p-7 ">
+                  <div className="flex pt-2 ">
+                    <div className="Poppins">{session.user.name}</div>
+                    <button
+                      className="pl-9 cursor-pointer"
+                      onClick={() => signOut()}
+                    >
                       {" "}
                       <img
                         className="  "
@@ -39,9 +59,17 @@ export default function Register() {
                       />
                     </button>
                   </div>
+                  <div className="Poppins text-sm opacity-65">
+                    {" "}
+                    {session.user.email}
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="Poppins justify-normal flex   p-30 pt-0 opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
+              Welcome,<div className="pl-3">{session.user.name}</div>
+            </div>
+            <ClientForm />
           </>
         )}
       </section>
