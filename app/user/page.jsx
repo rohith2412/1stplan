@@ -66,7 +66,7 @@ export default function Register() {
                 </div>
               </div>
             </div>
-            <div className="Poppins justify-normal flex   p-30 pt-0 opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
+            <div className="Poppins justify-normal flex pt-10 p-10 pl-35  opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
               Welcome,<div className="pl-3">{session.user.name}</div>
             </div>
             <ClientForm />

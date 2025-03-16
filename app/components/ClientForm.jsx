@@ -26,17 +26,19 @@ export function ClientForm() {
         <div className="flex justify-center"> 
         <div className="">
             <div className="text-2xl flex justify-center">Post A Job</div>
-      <div className="flex">
+      <div className="flex gap-20 pt-15">
         <div className="grid">
             <div className="grid gap-10">
-                <input className="border rounded" name="name" placeholder="Name" type="text" required onChange={handleChange} />
-                <input name="email" placeholder="Email" type="email" required onChange={handleChange} />
-                <input name="budget" placeholder="Budget" type="text" required onChange={handleChange} />
-                <input name="region" placeholder="Region" type="text" required onChange={handleChange} />
+                <input className="border rounded p-1" name="name" placeholder="Name*" type="text" required onChange={handleChange} />
+                <input className="border rounded p-1" name="email" placeholder="Email*" type="email" required onChange={handleChange} />
+                <input className="border rounded p-1" name="email" placeholder="Email*" type="email" required onChange={handleChange} />
+                <input className="border rounded p-1" name="budget" placeholder="Budget*" type="text" required onChange={handleChange} />
+                <input className="border rounded p-1" name="region" placeholder="Region*" type="text" required onChange={handleChange} />
+                <input className="border rounded p-1" name="region" placeholder="Region*" type="text" required onChange={handleChange} />
             </div>
         </div>
       <div className="grid">
-        <textarea className="" name="description" placeholder="Description about the project" required onChange={handleChange}></textarea>
+        <textarea className="" name="description" placeholder="Description about the project*" required onChange={handleChange}></textarea>
         <button type="submit" className="">Add Payment</button>
       </div>
       </div>
