@@ -21,7 +21,7 @@ export default function Register() {
                   src="/google.webp"
                   alt="Logo"
                 />
-                <button className="text-xl" onClick={() => signIn("google")}>
+                <button className="text-xl cursor-pointer" onClick={() => signIn("google")}>
                   Continue with Google
                 </button>
               </div>
@@ -41,6 +41,9 @@ export default function Register() {
               <div className="pt-10 pl-10">
                 <img src="/ccc.png" alt="Logo" width="100" height="100" />
               </div>
+              <div className="flex pr-290 pt-15  opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
+              Welcome,<div className="pl-3">{session.user.name}</div>
+            </div>
               <div className="flex  p-2">
                 <div className="p-7 ">
                   <div className="flex pt-2 ">
@@ -66,9 +69,7 @@ export default function Register() {
                 </div>
               </div>
             </div>
-            <div className="Poppins justify-normal flex pt-10 p-10 pl-35  opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
-              Welcome,<div className="pl-3">{session.user.name}</div>
-            </div>
+            
             <ClientForm />
           </>
         )}
