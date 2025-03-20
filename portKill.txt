@@ -1,0 +1,7 @@
+//killing the existing port
+
+PS C:\RoadToHeaven\1stplan> netstat -ano | findstr :3000
+>> 
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       22596
+  TCP    [::]:3000              [::]:0                 LISTENING       22596
+PS C:\RoadToHeaven\1stplan> taskkill /PID 22596 /F   

@@ -1,27 +1,26 @@
 "use client";
 import {ClientForm} from "../components/ClientForm"
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Background } from "../components/Background";
+import { Background } from "./Background";
 
-export default function Register() {
+export function Session() {
   const { data: session } = useSession();
   console.log(session);
 
   return (
     <div>
-      <Background />
       <section className="">
         {!session ? (
           <>
             <div className="grid justify-center p-60 gap-7 ">
               <div className="flex justify-center text-xl">Welcome </div>
-              <div className="flex gap-3 border p-4 rounded-2xl ">
+              <div className="flex gap-3 border p-4 rounded-2xl">
                 <img
                   className="h-6  "
                   src="/google.webp"
                   alt="Logo"
                 />
-                <button className="text-xl cursor-pointer " onClick={() => signIn("google")}>
+                <button className="text-xl cursor-pointer" onClick={() => signIn("google")}>
                   Continue with Google
                 </button>
               </div>
@@ -70,7 +69,6 @@ export default function Register() {
               </div>
             </div>
             
-            <ClientForm />
           </>
         )}
       </section>
