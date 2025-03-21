@@ -36,7 +36,7 @@ export function ClientForm() {
       });
 
       if (response.ok) {
-        router.push("/");
+        router.push("/pricing");
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData.message);
