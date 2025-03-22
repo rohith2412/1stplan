@@ -1,0 +1,5 @@
+git init
+git add .
+git commit -am "adding tailwind to payment"
+git remote add orgin https://github.com/rohith2412/1stplan.git
+git push orgin master
