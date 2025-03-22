@@ -1,35 +1,46 @@
-'use client'
-import axios from "axios"
-import { useState, useEffect } from "react"
+"use client";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import PricingCard from "../components/PricingCard";
+import { Background } from "../components/Background";
+import { Navbar } from "../components/Navbar";
+import { Gmail } from "../components/Gmail";
 
 const Pricing = () => {
   const [prices, setPrices] = useState([]);
 
   useEffect(() => {
-  fetchPrices()
-  }, [])
-
+    fetchPrices();
+  }, []);
 
   const fetchPrices = async () => {
-    const {data} = await axios.get('/api/verificationfee')
-    setPrices(data)
-    console.log(data)
-  } 
+    const { data } = await axios.get("/api/verificationfee");
+    setPrices(data);
+    console.log(data);
+  };
 
   return (
-   <section className="w-full">
-         <div className="mx-auto max-w-4xl text-center mt-10 items-center">
-              <h2 className="text-3xl font-semibold leading-7 text-[#f1592a]">Pricing</h2>
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 sm:text-center">Check out all the information below</p>
-         </div>
-         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[1040px] items-center mx-auto">
-           {prices && prices.map((price) => (
-            <PricingCard price={price} key={price.id} />
-           ))}
-         </div>
-   </section>
-  )
-}
+    
+    <section >
+      <div className="flex justify-end pt-3 pr-4">
+        <Gmail />
+      </div>
+      <Background />
 
-export default Pricing
+      <div className="grid justify-center pt-20">
+        <div className="">
+          <h2 className=" pb-30 text-xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center z-10 text-black tracking-tight">
+            {" "}
+            Verification Payment
+          </h2>
+        </div>
+        <div className="p-4 border-1 rounded-xl ">
+          {prices &&
+            prices.map((price) => <PricingCard price={price} key={price.id} />)}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Pricing;
