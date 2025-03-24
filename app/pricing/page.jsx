@@ -27,16 +27,18 @@ const Pricing = () => {
       </div>
       <Background />
 
-      <div className="grid justify-center pt-20">
+      <div className="grid justify-center pt-15">
         <div className="">
-          <h2 className=" pb-30 text-xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center z-10 text-black tracking-tight">
+          <h2 className=" pb-20 text-xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center z-10 text-black tracking-tight">
             {" "}
             Verification Payment
           </h2>
         </div>
-        <div className="p-4 border-1 rounded-xl ">
+        <div className="px-10">
+        <div className="p-2 border-1 rounded-xl ">
           {prices &&
             prices.map((price) => <PricingCard price={price} key={price.id} />)}
+        </div>
         </div>
       </div>
     </section>

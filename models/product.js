@@ -1,10 +1,10 @@
-const { Schema, models, model } = require("mongoose");
+import { Schema, model, models } from "mongoose";
 
 const ProductSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: "User", // Relation to User model
+      ref: "User", 
       required: [true, "User is required"],
     },
     name: {
@@ -20,7 +20,7 @@ const ProductSchema = new Schema(
       required: [true, "Field is required"],
     },
     budget: {
-      type: Schema.Types.Mixed, // Allows both String and Number
+      type: Schema.Types.Mixed, 
       required: [true, "Budget is required"],
     },
     region: {
@@ -32,7 +32,7 @@ const ProductSchema = new Schema(
       required: [true, "Description is required"],
     },
   },
-  { timestamps: true } // Automatically adds createdAt and updatedAt fields
+  { timestamps: true }
 );
 
 const Product = models.Product || model("Product", ProductSchema);

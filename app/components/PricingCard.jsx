@@ -48,7 +48,7 @@ const PricingCard = ({ price }) => {
               className="blue_gradient cursor-pointer pl-4.5 pt-1 pb-1 text-white pr-4.5 rounded-lg"
               onClick={handleSubscription}
             >
-              Proceed
+              Pay now
             </button>
           </div>
         </div>

@@ -6,7 +6,7 @@ export function FirstLayer() {
       <h1 className="p-15 mt-6 text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mx-auto text-center z-10 text-black tracking-tight pb-0">
         Get Your Work Done With <br /> Skilled Creators{" "}
       </h1>
-      <p className="text-sm text-center mt-2">
+      <p className="text-sm text-center mt-2 opacity-50">
         *Note: For creators, our main goal is to get you all of them hands on experience
         and for that our team will be pushing everyones profile to get <br />{" "}
         placed for specific task if you are a suitable candidate, this platform

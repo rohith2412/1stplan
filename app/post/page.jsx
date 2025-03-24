@@ -3,13 +3,12 @@ import { ClientForm } from "../components/ClientForm";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Background } from "../components/Background";
 import { Signout } from "../components/Signout";
-import { Activities } from "../components/Activities";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Loading } from "../components/Loading";
 import Link from "next/link";
 
-export default function Dashboard() {
+export default function Post() {
   const { data: session, status } = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -29,14 +28,7 @@ export default function Dashboard() {
           <Signout />
 
           <div>
-            <div className="">
-              <Link href="/post">
-                <button className="blue_gradient cursor-pointer pl-3 pt-1 pb-1 text-white pr-4.5 rounded">
-                  + POST
-                </button>
-              </Link>
-            </div>
-            <Activities />
+            <ClientForm />
           </div>
         </div>
       )}

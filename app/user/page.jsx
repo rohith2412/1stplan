@@ -1,77 +1,38 @@
 "use client";
-import {ClientForm} from "../components/ClientForm"
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useSession, signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { Background } from "../components/Background";
+import { Loading } from "../components/Loading";
+import { ClientForm } from "../components/ClientForm";
 
 export default function Register() {
-  const { data: session } = useSession();
-  console.log(session);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  // Redirect to /dashboard when authenticated
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [status, router]);
 
   return (
     <div>
       <Background />
-      <section className="">
+      <section className="flex justify-center items-center h-screen">
         {!session ? (
-          <>
-            <div className="grid justify-center p-60 gap-7 ">
-              <div className="flex justify-center text-xl">Welcome </div>
-              <div className="flex gap-3 border p-4 rounded-2xl ">
-                <img
-                  className="h-6  "
-                  src="/google.webp"
-                  alt="Logo"
-                />
-                <button className="text-xl cursor-pointer " onClick={() => signIn("google")}>
-                  Continue with Google
-                </button>
-              </div>
+          <div className="grid justify-center p-10 gap-7 text-center">
+            <div className="text-xl">Welcome</div>
+            <div className="flex gap-3 border p-4 rounded-2xl cursor-pointer" onClick={() => signIn("google")}>
+              <img className="h-6" src="/google.webp" alt="Google Logo" />
+              <button className="text-xl">Continue with Google</button>
             </div>
-          </>
+          </div>
         ) : (
-          <>
-            <div className="flex justify-between ">
-              <style jsx global>{`
-                @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-                .poppins {
-                  font-family: "Poppins", sans-serif;
-                  font-weight: 400;
-                  font-style: normal;
-                }
-              `}</style>
-              <div className="pt-10 pl-10">
-                <img src="/ccc.png" alt="Logo" width="100" height="100" />
-              </div>
-              <div className="flex pr-290 pt-15  opacity-70 text-2xl sm:text-sm md:text-xl lg:text-2xl font-semibold z-10 tracking-tight ">
-              Welcome,<div className="pl-3">{session.user.name}</div>
-            </div>
-              <div className="flex  p-2">
-                <div className="p-7 ">
-                  <div className="flex pt-2 ">
-                    <div className="Poppins">{session.user.name}</div>
-                    <button
-                      className="pl-9 cursor-pointer"
-                      onClick={() => signOut()}
-                    >
-                      {" "}
-                      <img
-                        className="  "
-                        src="/logout.png"
-                        alt="Logo"
-                        width="20"
-                        height="20"
-                      />
-                    </button>
-                  </div>
-                  <div className="Poppins text-sm opacity-65">
-                    {" "}
-                    {session.user.email}
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <ClientForm />
-          </>
+          <div>
+            <Loading />
+          </div>
         )}
       </section>
     </div>

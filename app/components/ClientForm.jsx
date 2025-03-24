@@ -59,7 +59,7 @@ export function ClientForm() {
                 <input
                   className="outline-none bg-gray-100 p-1 rounded-md"
                   name="name"
-                  placeholder="Name *"
+                  placeholder="Project Name *"
                   type="text"
                   value={formData.name}
                   required
