@@ -28,10 +28,10 @@ export default function Dashboard() {
         <div>
           <Signout />
 
-          <div>
-            <div className="">
+          <div className="pl-55 pt-15">
+            <div className="pb-20">
               <Link href="/post">
-                <button className="blue_gradient cursor-pointer pl-3 pt-1 pb-1 text-white pr-4.5 rounded">
+                <button className=" blue_gradient cursor-pointer pl-3 pt-1 pb-1 text-white pr-4.5 rounded">
                   + POST
                 </button>
               </Link>
