@@ -49,7 +49,7 @@ export function Activities() {
       </div>
       <div>
         {products.length === 0 ? (
-          <p>No products found</p>
+          <p className="pt-10">No products found</p>
         ) : (
           <div>
             {products.map((product) => (
@@ -57,9 +57,9 @@ export function Activities() {
                 <div className="flex gap-40 text-sm p-5 border w-331.5 bg-gray-100">
                   <div className="w-25">{product.name}</div>
                   <div className="w-0 "> {"$" + product.budget}</div>
-                  <div className="w-10 ">{product.email}</div>
-                  <div className="w-42">{product._id}</div>
-                  <div className="w-30 ">{product.field}</div>
+                  <div className="w-14 ">{product.email}</div>
+                  <div className="w-40">{product._id}</div>
+                  <div className="w-28 ">{product.field}</div>
                   <div className="w-10 ">Link</div>
                 </div>
               </div>

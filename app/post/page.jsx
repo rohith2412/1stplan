@@ -26,7 +26,6 @@ export default function Post() {
       {!session ? null : (
         <div>
           <Signout />
-
           <div>
             <ClientForm />
           </div>

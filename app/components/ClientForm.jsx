@@ -1,6 +1,16 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutPage from "../../components/CheckoutPage"
+import convertToSubscurrency from "../../utils/convertToSubscurrency"
+
+if(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
+  throw new Error("next publick key not available")
+}
+
+const stripPromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY) 
 
 export function ClientForm() {
   const { data: session } = useSession();
@@ -31,7 +41,7 @@ export function ClientForm() {
         },
         body: JSON.stringify({
           ...formData,
-          user: session?.user?.id, 
+          user: session?.user?.id,
         }),
       });
 
@@ -85,7 +95,7 @@ export function ClientForm() {
                   className="outline-none bg-gray-100 p-1 rounded-md"
                   name="budget"
                   placeholder="Budget *"
-                  type="text"
+                  type="number"
                   required
                   onChange={handleChange}
                 />
@@ -114,6 +124,7 @@ export function ClientForm() {
               type="submit"
               className="blue_gradient cursor-pointer pl-7 pt-3 pb-3 text-white pr-7 rounded-lg hover:opacity-70"
             >
+              
               Add Payment
             </button>
           </div>
